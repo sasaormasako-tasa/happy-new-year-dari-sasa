@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy New Year</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *{
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+    body{
+      margin:0;
+      height:100vh;
+      background:linear-gradient(135deg,#ff8fb3,#ffc1d6,#ffe4ee);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }.card{
+  background:#fff5f9;
+  padding:34px 30px;
+  border-radius:24px;
+  width:360px;
+  text-align:center;
+  box-shadow:0 22px 45px rgba(255,105,180,0.35);
+  animation:fadeUp 1.2s ease;
+  border:1px solid #ffd1e1;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+marquee{
+  color:#ff4f8b;
+  font-size:13px;
+  margin-bottom:16px;
+  letter-spacing:0.6px;
+}
+
+h1{
+  font-weight:600;
+  color:#ff4f8b;
+  margin:6px 0 18px;
+  letter-spacing:1px;
+}
+
+p{
+  color:#6b2f46;
+  font-size:14px;
+  line-height:1.9;
+  font-weight:300;
+}
+
+button{
+  margin-top:24px;
+  padding:11px 30px;
+  border:none;
+  border-radius:26px;
+  background:linear-gradient(135deg,#ff5f9e,#ff8fbd);
+  color:white;
+  font-size:13px;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition:0.3s ease;
+  box-shadow:0 8px 20px rgba(255,95,158,0.4);
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(255,95,158,0.55);
+}
+
+.hearts span{
+  position:absolute;
+  color:#ff6fae;
+  font-size:14px;
+  animation:float 6s linear infinite;
+  opacity:0;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:1}
+  100%{transform:translateY(-700px);opacity:0}
+}
+
+  </style>
+</head>
+<body><div class="card">
+  <marquee>Terima kasih sudah hadir dalam kehidupan sasa yaaaa</marquee>  <h1>Happy New Year</h1>
+  <p>
+    Tahun kemarin mungkin tidak selalu mudah,
+    tapi kehadiran kalian membuatnya terasa lebih hangat.
+    <br><br>
+    Di tahun yang baru ini,
+    semoga langkah kita lebih ringan,
+    hati kita lebih tenang,
+    dan pertemanan ini tetap terjaga.
+    <br><br>
+    Terima kasih sudah menjadi bagian
+    dari cerita sasaa
+  </p><button onclick="sendLove()">Klik perlahan</button>
+
+</div><div class="hearts" id="hearts"></div><script>
+  function sendLove(){
+    for(let i=0;i<16;i++){
+      const h = document.createElement('span');
+      h.innerHTML = '❤';
+      h.style.left = Math.random()*100 + 'vw';
+      h.style.animationDuration = (Math.random()*3 + 4) + 's';
+      document.getElementById('hearts').appendChild(h);
+
+      setTimeout(()=>{h.remove()},7000);
+    }
+  }
+</script></body>
+</html>
